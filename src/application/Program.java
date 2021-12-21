@@ -9,7 +9,6 @@ import java.util.Scanner;
 import entities.Client;
 import entities.Order;
 import entities.OrderItem;
-import entities.Product;
 import entities.enums.Enums;
 
 public class Program {
@@ -44,19 +43,16 @@ public class Program {
 			String productName = sc.nextLine();
 			System.out.print("Product price: ");
 			double productPrice = sc.nextDouble();
-			Product product = new Product(productName, productPrice);
 			
 			System.out.print("Quantity: ");
 			int quantity = sc.nextInt();
-			OrderItem orderItem = new OrderItem(quantity, productPrice, product);
+			OrderItem orderItem = new OrderItem(productName, productPrice, quantity);
 			
 			order.addItem(orderItem);
 		}
 		
 		System.out.println();
 		System.out.println(order);
-		
-		
 		
 		
 		
